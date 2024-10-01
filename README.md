@@ -96,7 +96,7 @@ Este é o backend para uma aplicação de chat em tempo real que permite aos usu
 ## Como Começar
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/seunome/chat-backend.git](https://github.com/devmarcosantonio/chat)
+   git clone https://github.com/devmarcosantonio/chat
 
 ## Entidades
 
