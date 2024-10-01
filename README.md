@@ -46,7 +46,7 @@ Este é o backend para uma aplicação de chat em tempo real que permite aos usu
 
 ## Lista de Tarefas para o Backend
 ### Usuários
-- [ ] Implementar endpoints para **criação de conta** (registro).
+- [x] Implementar endpoints para **criação de conta** (registro).
 - [ ] Implementar endpoints para **login** e **logout**.
 - [ ] Criar um sistema para **atualizações de perfil** (nome de usuário, avatar, etc.).
 - [ ] Implementar a lógica para **adicionar e remover amigos**.
@@ -96,7 +96,7 @@ Este é o backend para uma aplicação de chat em tempo real que permite aos usu
 ## Como Começar
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seunome/chat-backend.git
+   git clone [https://github.com/seunome/chat-backend.git](https://github.com/devmarcosantonio/chat)
 
 ## Entidades
 
