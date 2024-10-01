@@ -51,6 +51,7 @@ Esta é uma aplicação pessoal de chat em tempo real construída utilizando Rea
 ### Usuários
 
 - ID: Identificador único do usuário.
+- Apelido: Nome unico de usuário.
 - Nome: Nome do usuário (deve ser único).
 - Email: Endereço de email do usuário (para login).
 - Senha: Senha do usuário (armazenada de forma segura).

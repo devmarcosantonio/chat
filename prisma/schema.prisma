@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                     String          @id @default(uuid())
+  nickname               String          @unique
+  name                   String
+  email                  String          @unique
+  password_hash          String
+  created_at             DateTime        @default(now())
+  
+  friendshipUser1        Friendship[]    @relation("friendshipUser1")
+  friendshipUser2        Friendship[]    @relation("friendshipUser2")
+  DirectMessageSender    DirectMessage[] @relation("sender_message")
+  DirectMessageRecipient DirectMessage[] @relation("recipient_message")
+
+  @@map("users")
+}
+
+model Friendship {
+  id String @id @default(uuid())
+
+  user1    User   @relation("friendshipUser1", fields: [user1_id], references: [id], onDelete: Cascade)
+  user1_id String
+
+  user2    User   @relation("friendshipUser2", fields: [user2_id], references: [id], onDelete: Cascade)
+  user2_id String
+
+  create_at DateTime @default(now())
+
+  @@unique([user1_id, user2_id])
+  @@unique([user2_id, user1_id])
+  @@map("friendships")
+}
+
+model DirectMessage {
+  id      String @id @default(uuid())
+  content String
+
+  sender    User @relation("sender_message", fields: [sender_user_id], references: [id])
+  recipient User @relation("recipient_message", fields: [recipient_user_id], references: [id])
+
+  sender_user_id    String
+  recipient_user_id String
+
+  timestamp DateTime @default(now())
+
+  @@map("direct_messages")
+}
