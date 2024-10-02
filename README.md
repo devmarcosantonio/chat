@@ -98,6 +98,29 @@ Este é o backend para uma aplicação de chat em tempo real que permite aos usu
    ```bash
    git clone https://github.com/devmarcosantonio/chat
 
+2. Abre o projeto e instale todas as depedências do projeto:
+```bash
+   npm install
+
+3. Crie um arquivo .env e configure as variáveis ambientes (Use ".env.exemple" como referência).
+
+4. Suba o banco de dados com docker compose.
+```bash
+   docker compose up -d
+
+5. Rode todas as migrates do banco de dados (o banco de dados deve está rodando).
+```bash
+   npx prisma generate
+   npx prisma migrate deploy
+
+6. Rodar o sistema
+```bash
+   npm run dev
+
+Se quiser fazer os testes, você pode digitar:
+```bash
+   npm run test
+
 ## Entidades
 
 ### Usuários
