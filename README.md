@@ -29,7 +29,6 @@ Este é o backend para uma aplicação de chat em tempo real que permite aos usu
 
 5. Rode todas as migrates do banco de dados (o banco de dados deve está rodando).
    ```bash
-   npx prisma generate
    npx prisma migrate deploy
 
 6. Rodar o sistema
